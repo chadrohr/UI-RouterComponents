@@ -1,0 +1,32 @@
+<svg
+	width="{{ dc.width }}"
+	height="{{ dc.height }}"
+	viewBox="{{ dc.viewBox }}">
+	<circle
+		cx="{{ dc.radius }}"
+		cy="{{ dc.radius }}"
+		r="{{ dc.innerRadius }}"
+		stroke-width="{{ dc.strokeWidth }}px" />
+	<circle
+		cx="{{ dc.radius }}"
+		cy="{{ dc.radius }}"
+		r="{{ dc.innerRadius }}"
+		stroke-width="{{ dc.strokeWidth }}px"
+		stroke-dasharray="{{ dc.dashArray }}"
+		stroke-dashoffset="{{ dc.dashOffset }}"
+		transform="rotate(-90 {{ dc.radius }} {{ dc.radius }})"/>
+	<text
+		x="{{ dc.radius }}"
+		y="{{ dc.radius + 30 }}"
+		dy=".2em"
+		text-anchor="middle">
+		{{ dc.caption }}
+	</text>
+	<text
+		x="{{ dc.radius }}"
+		y="{{ dc.radius - 5 }}"
+		dy=".4em"
+		text-anchor="middle">
+		{{ dc.count }}
+	</text> 
+</svg>
