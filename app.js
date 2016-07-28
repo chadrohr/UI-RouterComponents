@@ -2,7 +2,7 @@
 
 	var app = angular.module('affiliates', ['ui.router']);
 
-	app.config(function ($stateProvider, $urlRouterProvider) {
+	app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
 		$urlRouterProvider.otherwise('/dashboard');
 
@@ -14,8 +14,16 @@
 			.state('list', {
 				url: '/list',
 				component: 'affiliateList'
+			})
+			.state('profile', {
+				url: '/profile/:affiliateId',
+				component: 'profile'
+			})
+			.state('applications', {
+				url: '/applications',
+				component: 'applications'
 			});
-	});
+	}]);
 
 	app.controller('appController', appController);
 
