@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="site.css">
 </head>
 
-<body ng-controller="appController">
+<body ng-controller="appController as ac">
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
@@ -31,7 +31,8 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<form class="navbar-form navbar-right">
-					<input type="text" class="form-control" placeholder="Search...">
+					<input ng-model="ac.query" type="text" class="form-control" placeholder="Search...">
+					<button ng-click="ac.search()" class="btn btn-primary">Go</button>
 				</form>
 			</div>
 		</div>
@@ -65,6 +66,7 @@
 	<script src="components/list.js"></script>
 	<script src="components/applications.js"></script>
 	<script src="components/profile.js"></script>
+	<script src="components/search.js"></script>
 </body>
 
 </html>

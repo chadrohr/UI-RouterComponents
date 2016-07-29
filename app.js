@@ -22,14 +22,28 @@
 			.state('applications', {
 				url: '/applications',
 				component: 'applications'
+			})
+			.state('search', {
+				url: '/search/:query',
+				component: 'search'
 			});
 	}]);
 
 	app.controller('appController', appController);
 
-	appController.$inject = ['dataService'];
+	appController.$inject = ['$state', 'dataService'];
 
-	function appController(dataService) {
+	function appController($state, dataService) {
 
+		var ac = this;
+		
+		ac.query = '';
+		
+		ac.search = function() {
+
+			if (ac.query) {
+				$state.go('search', { query: ac.query });
+			}			
+		}
 	}
 })();

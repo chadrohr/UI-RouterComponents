@@ -22,8 +22,7 @@
 		pc.fullName = affiliate.firstName + ' ' + affiliate.lastName;
 
 		pc.showAffiliates = function () {
-			//$state.go('list');
-			$state.go('profile', { affiliateId: 'b4fa3772-674e-4072-8dda-35b9a0e3c43e' });
+			$state.go('list');
 		};
 	}
 

@@ -8,12 +8,19 @@
 		controllerAs: 'lc'
 	});
 
-	listController.$inject = ['dataService'];
+	listController.$inject = ['$state', 'dataService'];
 
-	function listController(dataService) {
+	function listController($state, dataService) {
 		
 		var lc = this;
+		
+		lc.topAffiliates = dataService.getData().sort(function (a, b) {
+			return parseFloat(b.sales.replace('$', '')) - parseFloat(a.sales.replace('$', ''));
+		}).slice(0, 24);
 
+		lc.showProfile = function (id) {
+			$state.go('profile', { affiliateId: id });
+		}		
 	}
 
 })();

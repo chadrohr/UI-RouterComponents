@@ -1,0 +1,24 @@
+<div>
+	<h1 class="page-header">Search Results</h1>
+
+	<div>
+		<table class="table table-hover">
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>City</th>
+				<th>State</th>
+				<th>Application</th>
+				<th>Sales</th>
+			</tr>
+			<tr ng-repeat="a in sc.results" ng-click="sc.showProfile(a.id)">
+				<td>{{ a.firstName }}</td>
+				<td>{{ a.lastName }}</td>
+				<td>{{ a.city }}</td>
+				<td>{{ a.state }}</td>
+				<td>{{ a.app }} {{ a.version }}</td>
+				<td>{{ a.sales }}</td>
+			</tr>
+		</table>
+	</div>
+</div>
