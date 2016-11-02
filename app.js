@@ -1,8 +1,12 @@
 (function () {
 
 	var app = angular.module('affiliates', ['ui.router']);
+	
+	app.config(AppConfiguration);
 
-	app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+	AppConfiguration.$inject = ['$stateProvider', '$urlRouterProvider'];
+
+	function AppConfiguration($stateProvider, $urlRouterProvider) {
 
 		$urlRouterProvider.otherwise('/dashboard');
 
@@ -27,7 +31,7 @@
 				url: '/search/:query',
 				component: 'search'
 			});
-	}]);
+	}
 
 	app.controller('appController', appController);
 
