@@ -11,7 +11,7 @@
 	statesController.$inject = ['$state', 'dataService'];
 
 	function statesController($state, dataService) {
-        var sc = this;
+        let sc = this;
 
         let stateTotals = {};
 
