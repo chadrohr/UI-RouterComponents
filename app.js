@@ -30,6 +30,10 @@
 			.state('search', {
 				url: '/search/:query',
 				component: 'search'
+			})
+			.state('states', {
+				url: '/states',
+				component: 'states'
 			});
 	}
 
